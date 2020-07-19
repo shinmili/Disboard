@@ -13,9 +13,9 @@ namespace Disboard.Pleroma
         public PleromaApi Pleroma { get; }
         public new StreamingClient Streaming { get; }
 
-        public PleromaClient(string domain, HttpClientHandler innerHandler = null) : this(new Credential {Domain = domain}, innerHandler) { }
+        public PleromaClient(string domain, HttpMessageHandler innerHandler = null) : this(new Credential {Domain = domain}, innerHandler) { }
 
-        public PleromaClient(Credential credential, HttpClientHandler innerHandler = null) : base(credential, innerHandler)
+        public PleromaClient(Credential credential, HttpMessageHandler innerHandler = null) : base(credential, innerHandler)
         {
             Pleroma = new PleromaApi(this);
             Streaming = new StreamingClient(this);

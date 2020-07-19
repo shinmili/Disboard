@@ -7,7 +7,7 @@ namespace Disboard.Clients
 {
     public class OAuth2HttpClientHandler : DisboardHttpHandler
     {
-        public OAuth2HttpClientHandler(HttpClientHandler innerHandler = null) : base(innerHandler) { }
+        public OAuth2HttpClientHandler(HttpMessageHandler innerHandler = null) : base(innerHandler) { }
 
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {

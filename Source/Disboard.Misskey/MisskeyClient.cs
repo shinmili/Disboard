@@ -37,9 +37,9 @@ namespace Disboard.Misskey
         public UsernameClient Username { get; }
         public UsersClient Users { get; }
 
-        public MisskeyClient(string domain, HttpClientHandler innerHandler = null) : this(new Credential { Domain = domain }, innerHandler) { }
+        public MisskeyClient(string domain, HttpMessageHandler innerHandler = null) : this(new Credential { Domain = domain }, innerHandler) { }
 
-        public MisskeyClient(Credential credential, HttpClientHandler innerHandler = null) : base(credential, new MisskeyAuthenticationHandler(innerHandler), RequestMode.Json)
+        public MisskeyClient(Credential credential, HttpMessageHandler innerHandler = null) : base(credential, new MisskeyAuthenticationHandler(innerHandler), RequestMode.Json)
         {
             BinaryParameters = new List<string> { "file" };
 

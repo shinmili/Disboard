@@ -15,7 +15,7 @@ namespace Disboard.Misskey.Handlers
 {
     public class MisskeyAuthenticationHandler : DisboardHttpHandler
     {
-        public MisskeyAuthenticationHandler(HttpClientHandler innerHandler = null) : base(innerHandler) { }
+        public MisskeyAuthenticationHandler(HttpMessageHandler innerHandler = null) : base(innerHandler) { }
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {

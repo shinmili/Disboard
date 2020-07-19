@@ -9,9 +9,9 @@ namespace Disboard.Mastodon
 {
     public class MastodonClient : AppClient
     {
-        public MastodonClient(string domain, HttpClientHandler innerHandler = null) : this(new Credential { Domain = domain }, innerHandler) { }
+        public MastodonClient(string domain, HttpMessageHandler innerHandler = null) : this(new Credential { Domain = domain }, innerHandler) { }
 
-        public MastodonClient(Credential credential, HttpClientHandler innerHandler = null) : base(credential, new OAuth2HttpClientHandler(innerHandler), RequestMode.FormUrlEncoded)
+        public MastodonClient(Credential credential, HttpMessageHandler innerHandler = null) : base(credential, new OAuth2HttpClientHandler(innerHandler), RequestMode.FormUrlEncoded)
         {
             BinaryParameters = new List<string> { "avatar", "header", "file" };
 

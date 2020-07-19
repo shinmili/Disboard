@@ -7,6 +7,6 @@ namespace Disboard.Clients
         // ReSharper disable once MemberCanBeProtected.Global
         protected internal AppClient Client { get; internal set; }
 
-        protected DisboardHttpHandler(HttpClientHandler innerHandler = null) : base(innerHandler ?? new HttpClientHandler()) { }
+        protected DisboardHttpHandler(HttpMessageHandler innerHandler = null) : base(innerHandler ?? new HttpClientHandler()) { }
     }
 }
